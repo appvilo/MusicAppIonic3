@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" style="color: black;"></ion-icon>
+    </button>
+    
+    <ion-title >Запись голоса</ion-title>
+    <ion-buttons end  >
+      <button style="background-color: transparent;" (click)='showAlert()'> 
+      
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="back" >
+  <ion-list>
+    <ion-item *ngFor="let audio of audioList; index as i;">
+      <p style="color:black;">{{audio.filename}}</p>
+      <button ion-button clear item-end large (click)="playAudio(audio.filename, i)"><ion-icon name="play" style="
+        color: black;
+    "></ion-icon></button>
+    </ion-item>
+  </ion-list>
+
+
+
+
+  <ion-fab bottom right *ngIf="!recording">
+    <button ion-fab style="
+    background-color: black;
+" (click)="startRecord()"><ion-icon name="mic"></ion-icon></button>
+  </ion-fab>
+  <ion-fab bottom right *ngIf="recording">
+    <button ion-fab style="
+    background-color: red;
+" (click)="stopRecord()"><ion-icon name="mic-off"></ion-icon></button>
+  </ion-fab>
+</ion-content>

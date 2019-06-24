@@ -1,0 +1,260 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" style="color: black;"></ion-icon>
+    </button>
+    
+  
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="back" fullscreen >
+    <div text-center >
+      
+<!--
+        <h1 class="custom_h">Привет </h1>
+      
+        <p style="color: white">Что бы вы хотели послушать?</p>-->
+
+       <!-- <ion-scroll scrollX style="height:100px;">
+    
+          
+                <ion-grid>
+                   
+                    <ion-row class="custom_g">
+                      <ion-col>
+                        <ion-item>
+                          <ion-thumbnail item-start class="custom ">
+                              <img src="assets/imgs/thumbnail-totoro.png">
+                            </ion-thumbnail>
+                          </ion-item>
+                      </ion-col>
+                      <ion-col>
+                          <ion-item>
+                          <ion-thumbnail item-start class="custom">
+                              <img src="assets/imgs/thumbnail-rotla.png">
+                            </ion-thumbnail>
+                          </ion-item>
+                      </ion-col>
+                      <ion-col>
+                          <ion-item>
+                          <ion-thumbnail item-start class="custom">
+                              <img src="assets/imgs/thumbnail-ghostbusters.png">
+                            </ion-thumbnail>
+                          </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+          </ion-scroll>-->
+       <br>
+
+       <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card style="
+            border-radius: 15px;
+        " (click)="nextPage(1)">
+
+              <img src="assets/imgs/welc_h.png">
+              <ion-fab right top>
+                <button ion-fab style="font-size: 7pt;">
+                  НОВЫЕ
+                </button>
+              </ion-fab>
+
+              <ion-fab left top >
+                <button ion-fab style="background-color: #5b5b5b;color: white;opacity: 0.85;" class="custom_barge_left" >
+                  {{count_one}} песен
+                </button>
+              </ion-fab>
+
+              <ion-fab  center bottom> 
+                <button ion-fab style="background-color: #2c2c2c;color: white;margin-left: 0px;    opacity: 0.9;" class="custom_barge_bottom">
+                  Happy
+                </button>
+              </ion-fab>
+
+              </ion-card>
+
+          </ion-col>
+          <ion-col>
+            <ion-card style="
+            border-radius: 15px;
+        " (click)="nextPage(2)">
+
+              <img src="assets/imgs/welc_m.png">
+              <ion-fab right top>
+                <button ion-fab style="font-size: 7pt;">
+                  НОВЫЕ
+                </button>
+              </ion-fab>
+
+              <ion-fab left top >
+                <button ion-fab style="background-color: #5b5b5b;color: white;opacity: 0.85;" class="custom_barge_left" >
+                  {{count_two}} песен
+                </button>
+              </ion-fab>
+
+              <ion-fab  center bottom>
+                <button ion-fab style="background-color: #2c2c2c;color: white;    opacity: 0.9;margin-left: 0px;width: 60px;" class="custom_barge_bottom_x">
+                  Morning
+                </button>
+              </ion-fab>
+
+              </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card style="
+            border-radius: 15px;
+        " (click)="nextPage(3)">
+
+              <img src="assets/imgs/welc_l.png">
+              <ion-fab right top>
+                <button ion-fab style="font-size: 7pt;">
+                  НОВЫЕ
+                </button>
+              </ion-fab>
+
+              <ion-fab left top >
+                <button ion-fab style="background-color: #5b5b5b;color: white;opacity: 0.85;" class="custom_barge_left" >
+                  {{count_three}} песен
+                </button>
+              </ion-fab>
+
+              <ion-fab  center bottom>
+                <button ion-fab style="background-color: #2c2c2c;color: white;font-weight: bold;margin-left: 0px;    opacity: 0.9;" class="custom_barge_bottom">
+                  Love
+                </button>
+              </ion-fab>
+
+              </ion-card>
+
+          </ion-col>
+          <ion-col>
+            <ion-card style="
+            border-radius: 15px;
+        " (click)="nextPage(4)">
+
+              <img src="assets/imgs/welc_g.png">
+              <ion-fab right top>
+                <button ion-fab style="font-size: 7pt;">
+                  НОВЫЕ
+                </button>
+              </ion-fab>
+
+              <ion-fab left top >
+                <button ion-fab style="background-color: #5b5b5b;color: white;opacity: 0.85;" class="custom_barge_left" >
+                  {{count_four}} песен
+                </button>
+              </ion-fab>
+
+              <ion-fab  center bottom>
+                <button ion-fab style="background-color: #2c2c2c;color: white;margin-left: 0px;    opacity: 0.9;" class="custom_barge_bottom">
+                  Gym
+                </button>
+              </ion-fab>
+
+              </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card style="
+            border-radius: 15px;
+        " (click)="nextPage(5)">
+
+              <img src="assets/imgs/welc_e.png">
+              <ion-fab right top>
+                <button ion-fab style="font-size: 7pt;">
+                  НОВЫЕ
+                </button>
+              </ion-fab>
+
+              <ion-fab left top >
+                <button ion-fab style="background-color: #5b5b5b;color: white;opacity: 0.85;" class="custom_barge_left" >
+                  {{count_five}} песен
+                </button>
+              </ion-fab>
+
+              <ion-fab  center bottom>
+                <button ion-fab style="background-color: #2c2c2c;color: white;margin-left: 0px;    opacity: 0.9;width: 60px;" class="custom_barge_bottom_x">
+                 Evening
+                </button>
+              </ion-fab>
+
+              </ion-card>
+
+          </ion-col>
+          <ion-col>
+            <ion-card style="
+            border-radius: 15px;
+        " (click)="cooming()">
+
+              <img src="assets/imgs/welc.png">
+              <ion-fab right top>
+                <button ion-fab style="font-size: 7pt;">
+                  НОВЫЕ
+                </button>
+              </ion-fab>
+
+              <ion-fab left top >
+                <button ion-fab style="background-color: #5b5b5b;color: white;opacity: 0.85;" class="custom_barge_left" >
+                  {{count_six}} песен
+                </button>
+              </ion-fab>
+
+              <ion-fab  center bottom>
+                <button ion-fab style="background-color: #2c2c2c;color: white;font-weight: bold;margin-left: 0px;    opacity: 0.9;" class="custom_barge_bottom">
+                  Man
+                </button>
+              </ion-fab>
+
+              </ion-card>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+
+<!--
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div><a href="#" (click)="nextPage()" class="button button-circle-nt button-nt "><img style="
+                  width: 65px;
+              " src="assets/imgs/fp.png"/></a>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div><a href="#" (click)="nextPage()" class="button button-circle-nt button-nt "><img style="
+                  width: 70px;
+              " src="assets/imgs/mor.png"/></a></div>
+       
+              </ion-col>
+            </ion-row>
+            <p><a href="#" (click)="nextPage()"  class="button button-circle-nt button-nt "><img style="
+              width: 40px;
+          " src="assets/imgs/love.png"/></a></p>
+            <ion-row>
+                <ion-col>
+                  <div><a href="#" (click)="nextPage()" style="line-height: 150px !important;" class="button button-circle-nt button-nt "><img style="
+                    width: 47px;
+                " src="assets/imgs/3.png"/></a>
+              </div>
+                </ion-col>
+                <ion-col>
+                  <div><a href="#" (click)="nextPage()" class="button button-circle-nt button-nt "><img style="
+                    width: 70px;
+                " src="assets/imgs/4.png"/></a></div>
+                  
+                </ion-col>
+              </ion-row>
+
+          
+            </ion-grid>-->
+
+         
+    </div>
+
+
+</ion-content>

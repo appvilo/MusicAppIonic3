@@ -1,0 +1,133 @@
+<ion-header no-border>
+  <ion-navbar transparent style="color:black;">
+  
+ 
+  </ion-navbar>
+  </ion-header>
+<ion-content padding class="back">
+    <!-- Playback section -->
+    <div text-center >
+      <!-- File name -->
+ 
+      <h1 style="color:black">Сейчас играет</h1>
+      
+      <p><img src="{{name_cat}}" width="100px"></p>
+      <!-- avatar --><br>
+      <div class="avatar" [style.background-image]="'url(' + image + ')'"></div>
+      <br>
+      <h1 style="    font-size: 19px;color: black">{{name}}</h1>
+      <p style="color:#adadad">{{name_cat_bottom}}</p>
+      <!-- control bar -->
+      <div>
+        
+
+        <audio-track #audioTrack [track]="currentTrack" [autoplay]="true" (onFinish)="onTrackFinished($event)">
+         
+         
+            <audio-track-progress-bar duration progress [audioTrack]="audioTrack" ></audio-track-progress-bar>
+         
+          
+        </audio-track>
+      </div>
+     
+    
+     
+      <ion-grid style="
+      padding-left: 50px;
+      padding-right: 50px;
+  ">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+          <ion-col>
+    
+
+            <img  width="25"  (click)="prev()" src="assets/imgs/left.png" >
+          </ion-col>
+          <ion-col>
+            <!-- Play/Pause -->
+
+            <button ion-button class="play-pause-btn" style="background-color: black;" *ngIf="play == '0'" (click)="play_sound()" color="primary" >
+              <ion-icon name="play" style="
+              color: white;
+              margin-left: 3px;
+          "></ion-icon>
+            </button>
+  
+            <button ion-button class="play-pause-btn" style="background-color: black;" *ngIf="play == '1'"  (click)="pause()" color="primary" >
+              <ion-icon name="pause" style="
+              color: white;
+              "></ion-icon>
+            </button>
+
+            <button ion-button class="play-pause-btn"  style="background-color: black;" *ngIf="play == '2'"  (click)="resume()" color="primary" >
+              <ion-icon name="play" style="
+              color: white;
+              margin-left: 3px;
+          "></ion-icon>
+            </button>
+
+          </ion-col>
+          <ion-col>
+            <!-- Forwards -->
+         
+
+            <img  width="25"   (click)="next()" src="assets/imgs/right.png" >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      
+      <!--<ion-icon name="arrow-down" style="color: black;  "></ion-icon>-->
+  
+    
+    <ion-grid style="
+    padding-top: 15px !important;
+">
+                   
+<ion-row >
+  <ion-col>
+    <div class="circle_btn_left" (click)="startRecord()" *ngIf="!recording" >
+      <ion-icon style=" color: white;
+      font-size: 25px;
+      margin-top: 5px;" name="mic"></ion-icon>
+    </div>
+
+    <div class="circle_btn_left" style="background-color: red !important;" (click)="stopRecord()" *ngIf="recording" >
+      <ion-icon style=" color: white;
+      font-size: 25px;
+      margin-top: 5px;" name="mic-off"></ion-icon>
+    </div>
+
+  </ion-col>
+  <ion-col>
+      <div class="circle_btn_center" >
+      <ion-icon *ngIf=" status_fav =='OK'" color="danger" style="     font-size: 25px;
+      margin-top: 6px;" name="heart" (click)="unlike()"></ion-icon>
+      <ion-icon *ngIf=" status_fav =='NO'" style="  color: grey;   font-size: 25px;
+      margin-top: 6px;" name="heart" (click)="like()"></ion-icon>
+    </div>
+  </ion-col>
+  <ion-col *ngIf="down=='0'">
+      <div class="circle_btn_r" (click)="download_mus()">
+      <ion-icon  style="color:white;       font-size: 25px;
+      margin-top: 6px;" name="cloud-download"></ion-icon>
+    </div>
+  </ion-col>
+
+  <ion-col *ngIf="down=='1'">
+    <div class="circle_btn_r" style="background-color: black !important;" >
+    <ion-icon  style="color:white;       font-size: 25px;
+    margin-top: 4px;" name="md-cloud-done"></ion-icon>
+  </div>
+</ion-col>
+</ion-row>
+      </ion-grid>
+    </div>
+  <br>
+  <br>
+    <div #popoverText class="text-to-change" style="
+    background-color: transparent;
+">
+        <div style="color: black">{{text}}</div>
+    
+          </div>
+  </ion-content>

@@ -1,0 +1,143 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <button   ion-button menuToggle>
+      <ion-icon name="menu" style="color: black;"></ion-icon>
+    </button>
+ 
+    <ion-title style="color: black;">Плейлист</ion-title>
+
+
+
+  </ion-navbar>
+
+  
+</ion-header>
+
+<ion-content class="back" >
+
+    <h4 text-center style="color:black;" *ngIf="con==false">Нет интернет соединения</h4>
+
+<ion-list  *ngFor="let item of items" >
+
+  <ion-item *ngIf="item.time !=null" (click)="nextPage(item)">
+    <ion-thumbnail item-start class="custom">
+      <img src="{{item.image}}" class="custom_img">
+    </ion-thumbnail>
+    <h2 style="color:black">{{item.name}}</h2>
+    <p style="
+    font-size: 13px;
+    color: black;
+" *ngIf="id=='1'">Happy &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="id=='2'">Morning &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="id=='3'">Love &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="id=='4'">Gym &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="id=='5'">Evening &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="id=='6'">Man &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time}}</span></p>
+<button ion-button clear item-end *ngIf="item.id_array=='0'"><ion-icon name="ios-star" style="color:black"></ion-icon></button>
+<button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:black"></ion-icon></button>
+  </ion-item>
+
+  <ion-item *ngIf="item.time ==null" (click)="nextPage(item)">
+    <ion-thumbnail item-start class="custom">
+      <img src="{{item.image}}" class="custom_img">
+    </ion-thumbnail>
+    <h2 style="color:black">{{item.name_music}}</h2>
+    <p style="
+    font-size: 13px;
+    color: black;
+" *ngIf="item.cat_id=='1'">Happy &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time_music}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="item.cat_id=='2'">Morning &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time_music}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="item.cat_id=='3'">Love &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time_music}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="item.cat_id=='4'">Gym &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time_music}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="item.cat_id=='5'">Evening &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time_music}}</span></p>
+<p style="
+font-size: 13px;
+color: black;
+" *ngIf="item.cat_id=='6'">Man &nbsp;&nbsp; <span style="color: black;font-size: 12px;">{{item.time_music}}</span></p>
+
+<button ion-button clear item-end><ion-icon name="ios-star" style="color:black"></ion-icon></button>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:black"></ion-icon></button>
+  </ion-item>
+  <!--<ion-item>
+    <ion-thumbnail item-start class="custom">
+      <img src="assets/imgs/thumbnail-rotla.png">
+    </ion-thumbnail>
+    <h2 style="color:black">Wake Me Up</h2>
+    <p style="       font-size: 13px;       color: black;   ">Avicii &nbsp;&nbsp; <span style="color: black;font-size: 12px;">4:15</span></p>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:#bbbbbb"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start class="custom">
+      <img src="assets/imgs/thumbnail-ghostbusters.png">
+    </ion-thumbnail>
+    <h2 style="color:black">Party Rock Anthem</h2>
+    <p style="       font-size: 13px;       color: black;   ">LMFAO &nbsp;&nbsp; <span style="color: black;font-size: 12px;">4:15</span></p>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:#bbbbbb"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start class="custom">
+      <img src="assets/imgs/thumbnail-batman.png">
+    </ion-thumbnail>
+    <h2 style="color:black">Party Rock Anthem</h2>
+    <p style="       font-size: 13px;       color: black;   ">LMFAO &nbsp;&nbsp; <span style="color: black;font-size: 12px;">4:15</span></p>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:#bbbbbb"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start class="custom">
+      <img src="assets/imgs/thumbnail-bttf.png">
+    </ion-thumbnail>
+    <h2 style="color:black">Party Rock Anthem</h2>
+    <p style="       font-size: 13px;       color: black;   ">LMFAO &nbsp;&nbsp;<span style="color: black;font-size: 12px;">4:15</span></p>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:#bbbbbb"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start class="custom">
+      <img src="assets/imgs/thumbnail-esb.png">
+    </ion-thumbnail>
+    <h2 style="color:black">Party Rock Anthem</h2>
+    <p style="       font-size: 13px;       color: black;   ">LMFAO &nbsp;&nbsp; <span style="color: black;font-size: 12px;">4:15</span></p>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:#bbbbbb"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start class="custom">
+      <img src="assets/imgs/thumbnail-terminator.png">
+    </ion-thumbnail>
+    <h2 style="color:black">Party Rock Anthem</h2>
+    <p style="       font-size: 13px;       color: black;   ">LMFAO &nbsp;&nbsp; <span style="color: black;font-size: 12px;">4:15</span></p>
+    <button ion-button clear item-end><ion-icon name="ios-arrow-forward-outline" style="color:#bbbbbb"></ion-icon></button>
+  </ion-item>
+-->
+</ion-list>
+</ion-content>

@@ -1,0 +1,56 @@
+page-voice {
+
+    
+    .toolbar-title{
+        color: black;
+    }
+
+    .scroll-content{
+        background-color: transparent;
+    }
+
+    .list {
+        background-color: transparent;
+    }
+    .back{
+        background-image: url('../assets/imgs/back_all.png');
+        -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+
+   .item{
+       background-color: transparent;
+   }
+
+    .custom{
+        background: black; /* Цвет фона */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);/* Параметры тени */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .list-ios .item-block .item-inner {
+        
+       // border-bottom: 0.3px solid rgba(163, 163, 163, 0.5) !important;
+       border-bottom: 0.5px solid rgba(255, 255, 255, 0.7) !important;
+    }
+   
+    .toolbar-background {
+        background-color: white;
+      }
+
+      .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0);
+    }
+
+    .header-md .toolbar-background-md, .footer-md .toolbar-background-md {
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0);
+    }
+    .scroll-content{
+        margin-top: 55px !important;
+    }
+}
