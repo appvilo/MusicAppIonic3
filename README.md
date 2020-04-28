@@ -16,8 +16,8 @@ Music App with powerful equalizer, quick search all your music files and music  
 
 
 ## Developer Contact
-Appvilo Development Team
+Yevtushenko Vladyslav
 
-* info@appvilo.com
-* www.appvilo.com
+* yevtushenko520@gmail.com
+* Skype: vladisheeee
 
